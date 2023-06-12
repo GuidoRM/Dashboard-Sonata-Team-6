@@ -1,0 +1,38 @@
+.totales_contenedor{
+    /*Flex*/
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    /*Estilos Visuales*/
+    padding: 1rem 0;
+}
+
+.totales_contenedor h1{
+    width: 90%;
+    font-size: 1.5rem;
+    color: var(--marron_fuerte);
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.total_contenedor {
+    /*Flex*/
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    /*Estilos Visuales*/
+    background: var(--marron_clarito);
+    border-radius: 10px;
+    border-bottom: 4px solid;
+    width: 250px;
+    padding: 2rem 0;
+    color: var(--marron_fuerte);
+}
+
+.total_contenedor i{
+    font-size: 2rem;
+}
