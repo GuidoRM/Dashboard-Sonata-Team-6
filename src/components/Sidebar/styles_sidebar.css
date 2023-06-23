@@ -34,7 +34,7 @@
 }
 
 .sidebar_contenedor_imagen {
-  margin-top: 20px;
+  margin-top: 10px;
   width: 90%;
   background: #5c342c6b;
   padding: 1rem;
@@ -64,17 +64,20 @@
   color: var(--marron_fuerte);
   text-decoration: none;
   font-weight: 600;
+  font-size: 1.2rem;
 
   display: flex;
   align-items: center;
   justify-content: space-around;
+  
 }
+
 
 .sidebar_botones a span{
-    width: 70%;
+    width: 90%;
 }
 
-/* Aplicar cambios cuando el ancho de la pantalla llegue a 800px */
+/* Aplicar cambios cuando el ancho de la pantalla llegue a 600px */
 @media (max-width: 600px) {
   .sidebar_contenedor_imagen {
     padding: 0.5rem;

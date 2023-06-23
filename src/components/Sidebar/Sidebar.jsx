@@ -11,7 +11,8 @@ import logoSonata from './logo_sonata.png';
 import NotFound from '../NotFound';
 import Principal from '../Principal'
 import ContenedorTarjetaTotal from "../TarjetasTotal/ContenedorTarjetaTotal";
-
+import ContenedorTarjetaUltimoElemento from '../TarjetaUltimoElemento/ContenedorTarjetaUltimoElemento';
+import ListaUsuarios from '../ListaUsuarios/ListaUsuarios';
 
 function SideBar() {
     return (
@@ -25,9 +26,11 @@ function SideBar() {
 
                 <section className="sidebar_botones">
                     <Link to="/totales"><i className="fa-solid fa-square-poll-vertical"></i> <span>Totales</span></Link>
-                    <Link to="/ultimoProducto"> <i className="fa-solid fa-fire"></i> <span>Ultimo Producto</span></Link>
+                    <Link to="/categorias"> <i className="fa-solid fa-ranking-star"></i><span>Categorias</span></Link>
+                    <Link to="/ultimasAdiciones"> <i className="fa-solid fa-fire"></i> <span>Últimas adiciones</span></Link>
                     <Link to="/productos"> <i className="fa-solid fa-compact-disc"></i><span>Productos</span></Link>
-                    <Link to="/categorias"> <i className="fa-solid fa-flag"></i><span>Categorias</span></Link>
+                    <Link to="/usuarios"> <i className="fa-solid fa-user"></i><span>Usuarios</span></Link>
+
                 </section>
 
             </section>
@@ -37,9 +40,10 @@ function SideBar() {
                 <Routes>
                     <Route path="/" element={<Principal />} />
                     <Route path="/totales" element={<ContenedorTarjetaTotal />} />
-                    <Route path="/ultimoProducto" element={<Principal />} />
+                    <Route path="/ultimasAdiciones" element={<ContenedorTarjetaUltimoElemento/>} />
                     <Route path="/categorias" element={<Principal />} />
                     <Route path="/productos" element={<Principal />} />
+                    <Route path="/usuarios" element={<ListaUsuarios />} />
                     <Route element={<NotFound />} />
                 </Routes>
 

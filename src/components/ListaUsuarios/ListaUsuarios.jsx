@@ -1,14 +1,12 @@
-import "./styles_tarjetaUltimoElemento.css"
+import "./styles_listaUsuarios.css"
 import PropTypes from 'prop-types';
 
-function ContenedorTarjetaTotal({nombre, tipo, imagen}) {
+function ListaUsuarios({nombre, tipo, imagen}) {
     return (
         <>
-            <section className="tarjetaUltimoElemento_contenedor">
+            <section className="elementoListaUsuario_contenedor">
 
-                <div className="tarjetaUltimoElemento_categoria">
-                    Último {tipo}
-                </div>
+                
 
                 <img className="tarjetaUltimoElemento_imagen" src={"http://localhost:3030/"+imagen} alt="Ultimo Producto"/>
 
@@ -22,18 +20,17 @@ function ContenedorTarjetaTotal({nombre, tipo, imagen}) {
     );
 }
 
-ContenedorTarjetaTotal.propTypes = {
+ListaUsuarios.propTypes = {
     nombre: PropTypes.string,
-    descripcion: PropTypes.string,
     tipo: PropTypes.string,
     imagen: PropTypes.string,
 };
 
-ContenedorTarjetaTotal.defaultProps = {
+ListaUsuarios.defaultProps = {
     nombre: "Nombre Elemento",
     tipo: "Elemento",
     imagen: "https://i.scdn.co/image/ab67616d0000b273ee2df133409d1e2cf0c07c19"
 }
 
 
-export default ContenedorTarjetaTotal;
+export default ListaUsuarios;

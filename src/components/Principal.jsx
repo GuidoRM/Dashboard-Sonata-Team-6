@@ -1,12 +1,12 @@
 //Componentes
 import ContenedorTarjetaTotal from "./TarjetasTotal/ContenedorTarjetaTotal";
-import TarjetaUltimoElemento from "./TarjetaUltimoElemento/TarjetaUltimoElemento"
+import ContenedorTarjetaUltimoElemento from "./TarjetaUltimoElemento/ContenedorTarjetaUltimoElemento";
 
 function Principal() {
     return (
         <>
             <ContenedorTarjetaTotal/>
-            <TarjetaUltimoElemento/>
+            <ContenedorTarjetaUltimoElemento/>
         </>
     );
 }
