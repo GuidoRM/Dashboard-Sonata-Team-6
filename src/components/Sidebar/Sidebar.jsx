@@ -21,15 +21,13 @@ function SideBar() {
                     <img className="sidebar_imagen" src={logoSonata} alt="Logo Sonata" />
                 </section>
 
-                <section className="sidebar_botonDashboard">
-                    <Link to="/">Dashboard - Sonata</Link>
-                </section>
+                <Link className="sidebar_botonDashboard" to="/"> <i className="fa-solid fa-table-columns"></i> <span>Dashboard - Sonata</span></Link>
 
                 <section className="sidebar_botones">
-                    <Link to="/totales">Totales</Link>
-                    <Link to="/ultimoProducto">Ultimo Producto</Link>
-                    <Link to="/categorias">Categorias</Link>
-                    <Link to="/productos">Productos</Link>
+                    <Link to="/totales"><i className="fa-solid fa-square-poll-vertical"></i> <span>Totales</span></Link>
+                    <Link to="/ultimoProducto"> <i className="fa-solid fa-fire"></i> <span>Ultimo Producto</span></Link>
+                    <Link to="/productos"> <i className="fa-solid fa-compact-disc"></i><span>Productos</span></Link>
+                    <Link to="/categorias"> <i className="fa-solid fa-flag"></i><span>Categorias</span></Link>
                 </section>
 
             </section>
@@ -42,7 +40,7 @@ function SideBar() {
                     <Route path="/ultimoProducto" element={<Principal />} />
                     <Route path="/categorias" element={<Principal />} />
                     <Route path="/productos" element={<Principal />} />
-                    <Route path="*" element={<NotFound />} />
+                    <Route element={<NotFound />} />
                 </Routes>
 
             </section>

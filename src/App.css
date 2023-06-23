@@ -14,11 +14,12 @@
 #root {
   background-color: antiquewhite;
   display: flex;
-
+  height: fit-content;
 }
 
 .contenedor_contenido{
-  width: 100%;
+  width: fit-content;
   min-height: 100vh;
   height: fit-content;
+  padding: 1rem;
 }

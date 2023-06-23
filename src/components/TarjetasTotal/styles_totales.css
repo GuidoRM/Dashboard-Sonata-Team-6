@@ -1,7 +1,7 @@
 .totales_contenedor{
     /*Flex*/
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: 1rem;
@@ -32,7 +32,13 @@
     padding: 2rem 0;
     color: var(--marron_fuerte);
 }
-
+/* Aplicar cambios cuando el ancho de la pantalla llegue a 800px */
+@media (max-width: 810px) {
+    .total_contenedor {
+      width: 100%;
+      /* Otros estilos o ajustes necesarios */
+    }
+  }
 .total_contenedor i{
     font-size: 2rem;
 }

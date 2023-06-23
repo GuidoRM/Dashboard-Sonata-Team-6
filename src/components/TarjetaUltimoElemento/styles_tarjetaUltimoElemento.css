@@ -1,0 +1,33 @@
+section.tarjetaUltimoElemento_contenedor {
+    background-color: var(--marron_clarito);
+    display: flex;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    padding: 1rem;
+}
+
+img.tarjetaUltimoElemento_imagen {
+    width: 200px;
+    border-radius: 1rem;
+}
+
+section.tarjetaUltimoElemento_informacion {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+h1.tarjetaUltimoElemento_titulo {
+    color: var(--marron_fuerte);
+    font-size: 1.5rem;
+}
+
+p.tarjetaUltimoElemento_descripcion {
+    text-align: justify;
+    font-size: 13px;
+    color: var(--marron_medio);
+    font-weight: 800;
+}
