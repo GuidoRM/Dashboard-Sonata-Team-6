@@ -24,18 +24,8 @@ function ListaUsuarios() {
         fetch(`http://localhost:3030/api/products/${keyword}`)
             .then(response => response.json())
             .then(data => {
-                if(data.id){
-                    setAlbumFilter(data)
-                }
-                else{
-                    setAlbumFilter("")
-                }
-                
-
+                setAlbumFilter(data)
             })
-        .catch(error =>{
-            console.log("Error");
-        })
     }, [keyword]);
 
     const filtrador = (e) => {
