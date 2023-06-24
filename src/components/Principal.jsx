@@ -1,4 +1,5 @@
 //Componentes
+import ListaUsuarios from "./ListaUsuarios/ListaUsuarios";
 import ContenedorTarjetaTotal from "./TarjetasTotal/ContenedorTarjetaTotal";
 import ContenedorTarjetaUltimoElemento from "./TarjetaUltimoElemento/ContenedorTarjetaUltimoElemento";
 import ContenedorGeneros from "./Generos/ContenedorGeneros";
@@ -8,7 +9,7 @@ function Principal() {
         <>
             <ContenedorTarjetaTotal/>
             <ContenedorTarjetaUltimoElemento/>
-            <ContenedorGeneros/>
+            <ListaUsuarios></ListaUsuarios>
         </>
     );
 }
