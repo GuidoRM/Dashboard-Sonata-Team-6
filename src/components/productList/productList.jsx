@@ -1,32 +1,41 @@
-import "./styles_listaUsuarios.css"
+import "../ListaUsuarios/styles_listaUsuarios.css"
 
 
 import { useState, useEffect, useRef } from 'react';
-import ElementoListaUsuario from "./ElementoListaUsuario";
+import ElementoListaAlbumes from "./ElementInListAlbumes";
 
 function ListaUsuarios() {
     const [keyword, setKeyword] = useState("0");
-    const [usuarioFiltro, setUsuarioFiltro] = useState([]);
+    const [albumFilter, setAlbumFilter] = useState([]);
     const inputTexto = useRef();
     const [users, setUsers] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:3030/api/users')
+        fetch('http://localhost:3030/api/products')
             .then((response) => {
                 return response.json()
             })
-            .then((users) => {
-                setUsers(users.Users)
+            .then((albumes) => {
+                setUsers(albumes.albums)
             })
     }, [])
 
     useEffect(() => {
-        fetch(`http://localhost:3030/api/users/${keyword}`)
+        fetch(`http://localhost:3030/api/products/${keyword}`)
             .then(response => response.json())
             .then(data => {
-                setUsuarioFiltro(data)
+                if(data.id){
+                    setAlbumFilter(data)
+                }
+                else{
+                    setAlbumFilter("")
+                }
+                
 
             })
+        .catch(error =>{
+            console.log("Error");
+        })
     }, [keyword]);
 
     const filtrador = (e) => {
@@ -38,44 +47,46 @@ function ListaUsuarios() {
         <>
             <section className="ListaUsuario_contenedor">
                 <form className="ListaUsuario_buscador" onSubmit={(e) => filtrador(e)} method="GET">
-                    <h1>Usuarios del Sistema </h1>
+                    <h1>Listado de Álbumes </h1>
                     <div className="ListaUsuario_contenedorBuscador">
                         <input onChange={(e) => filtrador(e)} placeholder="Buscar por #id" className="ListaUsuario_campoBuscar" ref={inputTexto} type="text" />
                         <button className="ListaUsuario_botonBuscar"><i className="fa-solid fa-magnifying-glass"></i></button>
                     </div>
+                    <p>{albumFilter.id}</p>
                 </form>
-                {usuarioFiltro.id == 0 && keyword!="0"?<span className="ListaUsuario_respuesta">{"No se han encontrado resultados del usuario con ID "+keyword}</span>: ""}
                 <table className="tablaElementoUsuario">
                     <thead>
                         <tr>
                             <th>ID</th>
                             <th>Imagen</th>
                             <th>Nombre</th>
-                            <th className="ElementoListaUsuario_email">Email</th>
-                            <th className="ElementoListaUsuario_isComposer">Tipo</th>
+                            <th className="ElementoListaUsuario_email">Precio</th>
+                            <th className="ElementoListaUsuario_isComposer">Género</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            usuarioFiltro.id != 0 && usuarioFiltro.id > 0 ?
-                                <ElementoListaUsuario
-                                    key={usuarioFiltro.id}
-                                    id={usuarioFiltro.id}
-                                    email={usuarioFiltro.email}
-                                    nombre={usuarioFiltro.name}
-                                    imagen={usuarioFiltro.image}
-                                    isComposer={usuarioFiltro.isComposer}
+                            albumFilter.id != 0 && albumFilter.id > 0 ?
+                                <ElementoListaAlbumes
+                                    key={albumFilter.id}
+                                    id={albumFilter.id}
+                                    nombre={albumFilter.name}
+                                    price={parseFloat(albumFilter.price)}
+                                    coin={albumFilter.coin}
+                                    imagen={albumFilter.image}
+                                    genre={albumFilter.genreAlbum.name}
                                 />
                                 :
                                 users.map((user) => {
                                     return (
-                                        <ElementoListaUsuario
+                                        <ElementoListaAlbumes
                                             key={user.id}
                                             id={user.id}
-                                            email={user.email}
                                             nombre={user.name}
+                                            price={parseFloat(user.price)}
+                                            coin={user.coin}
                                             imagen={user.image}
-                                            isComposer={user.isComposer}
+                                            genre={user.genreAlbum.name}
                                         />
                                     );
                                 })
