@@ -10,6 +10,7 @@ function Principal() {
             <ContenedorTarjetaTotal/>
             <ContenedorTarjetaUltimoElemento/>
             <ListaUsuarios></ListaUsuarios>
+            <ContenedorGeneros/>
         </>
     );
 }
