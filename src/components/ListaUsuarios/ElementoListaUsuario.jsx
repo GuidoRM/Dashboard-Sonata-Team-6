@@ -25,8 +25,8 @@ ElementoListaUsuario.propTypes = {
 
 ElementoListaUsuario.defaultProps = {
     id: 0,
-    nombre: "Nombre Elemento",
-    email: "Elemento",
+    nombre: "Sin registro",
+    email: "Sin registro",
     imagen: "https://i.scdn.co/image/ab67616d0000b273ee2df133409d1e2cf0c07c19",
     isComposer: 0
 }
