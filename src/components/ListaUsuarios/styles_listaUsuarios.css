@@ -12,29 +12,28 @@
 }
 
 table.tablaElementoUsuario {
-    width: 100%;
-    background-color: var(--marron_clarito);
-    text-align: center;
-    border-radius: 20px;
-    overflow: hidden;
-    border-bottom: 4px solid #8c3a27;
+  width: 100%;
+  background-color: var(--marron_clarito);
+  text-align: center;
+  border-radius: 20px;
+  overflow: hidden;
+  border-bottom: 4px solid #8c3a27;
 }
 
-.tablaElementoUsuario td{
-
+.tablaElementoUsuario td {
 }
 
-.ElementoListaUsuario_id{
-    background-color: #b49d82;
+.ElementoListaUsuario_id {
+  background-color: #b49d82;
 }
 
 thead {
-    background-color: #8c3a27;
-    color: #d9c6b0;
-    width: 100%;
+  background-color: #8c3a27;
+  color: #d9c6b0;
+  width: 100%;
 }
-thead th{
-    padding: 1rem;
+thead th {
+  padding: 1rem;
 }
 section.ListaUsuario_contenedor {
   width: 100%;
@@ -46,6 +45,7 @@ img.ElementoListaUsuario_imagen {
   height: 50px;
   object-fit: cover;
   margin: 5px;
+  border-radius: 2rem;
 }
 
 /* Crea una alternancia de colores a lo largo de las filas de la tabla. Establece en color azul todas las filas pares (2, 4, 6 ...) */
@@ -55,53 +55,68 @@ img.ElementoListaUsuario_imagen {
 
 /*BUSCADOR*/
 .ListaUsuario_buscador {
-    background: var(--marron_fuerte);
-    padding: 1rem;
-    margin: 1rem 0;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: var(--marron_clarito);
+  background: var(--marron_fuerte);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--marron_clarito);
 }
-.ListaUsuario_botonBuscar{
-    
-    padding: 0.4rem;
-    border-radius: 0rem 2rem 2rem 0rem;
-    border: none;
-    background: var(--marron_clarito);
-    color: var(--marron_fuerte);
-
+.ListaUsuario_botonBuscar {
+  padding: 0.4rem;
+  border-radius: 0rem 2rem 2rem 0rem;
+  border: none;
+  background: var(--marron_clarito);
+  color: var(--marron_fuerte);
 }
 .ListaUsuario_campoBuscar {
-    padding: 0.4rem;
-    border-radius: 2rem 0rem 0rem 2rem;
-    border: none;
-    background: var(--marron_clarito);
-    color: var(--marron_fuerte);
-    outline: none;
+  padding: 0.4rem;
+  border-radius: 2rem 0rem 0rem 2rem;
+  border: none;
+  background: var(--marron_clarito);
+  color: var(--marron_fuerte);
+  outline: none;
 }
 
 span.ListaUsuario_respuesta {
-    display: block;
-    width: 100%;
-    background: #d9c6b0;
-    color: #8c3a27;
-    padding: 1rem;
-    text-align: center;
-    margin: 10px 0;
-    border-radius: 10px;
+  display: block;
+  width: 100%;
+  background: #d9c6b0;
+  color: #8c3a27;
+  padding: 1rem;
+  text-align: center;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+.ListaUsuario_buscador h1{
+  font-size: 1.4rem;
 }
 
 /* Aplicar cambios cuando el ancho de la pantalla llegue a 800px */
 @media (max-width: 800px) {
-    .ElementoListaUsuario_email{
-        display: none;
-    }
+  .ElementoListaUsuario_email {
+    display: none;
+  }
+
+  .ListaUsuario_contenedorBuscador {
+    position: relative;
+  }
+
+  .ListaUsuario_botonBuscar {
+    position: absolute;
+    right: 0;
+    border-radius: 2rem;
+  }
+  .ListaUsuario_campoBuscar{
+    border-radius: 2rem;
+  }
 }
 
 @media (max-width: 500px) {
-    .ElementoListaUsuario_isComposer{
-        display: none;
-    }
+  .ElementoListaUsuario_isComposer {
+    display: none;
+  }
 }

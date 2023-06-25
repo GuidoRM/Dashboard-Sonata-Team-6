@@ -39,7 +39,7 @@ function ListaUsuarios() {
         <>
             <section className="ListaUsuario_contenedor">
                 <form className="ListaUsuario_buscador" onSubmit={(e) => filtrador(e)} method="GET">
-                    <h1>Usuarios del Sistema </h1>
+                    <h1><i className="fa-solid fa-user"></i> Usuarios del Sistema</h1>
                     <div className="ListaUsuario_contenedorBuscador">
                         <input onChange={(e) => filtrador(e)} placeholder="Buscar por #id" className="ListaUsuario_campoBuscar" ref={inputTexto} type="text" />
                         <button className="ListaUsuario_botonBuscar"><i className="fa-solid fa-magnifying-glass"></i></button>
