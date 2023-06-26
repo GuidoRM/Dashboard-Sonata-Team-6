@@ -24,10 +24,14 @@ img.tarjetaUltimoElemento_imagen {
     width: 90%;
     box-shadow: 1px 1px 1px 1px var(--marron_medio);
     border-radius: 1rem;
+    height: 250px;
+    object-fit: cover;
 }
 
 section.tarjetaUltimoElemento_informacion {
+    width: 100%;
     padding: 1rem;
+    align-items: center;
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;

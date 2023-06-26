@@ -5,9 +5,10 @@
     flex-wrap: wrap;
     gap: 1rem;
     padding: 1rem 0;
-    width: 500px;
+    width: 100%;
+    background: var(--marron_clarito);
+    border-radius: 20px;
     
-
 }
 
 .contenedor_generos h1{
@@ -24,15 +25,45 @@
     align-items: center;
     justify-content: space-around;
     
-    background: var(--marron_clarito);
+    color: var(--marron_clarito);
     border-radius: 10px;
     width: 200px;
     height: 50px;
     font-size: 12px;
     padding: 2rem 0;
-    color: var(--marron_fuerte);
+    background-color: var(--marron_fuerte);
+}
+.informacion{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 10px;
+    width: 100%;
+}
+
+span.cantidad_generos {
+    font-size: 1rem;
+    background: #5a2d22;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+
 }
 
 .generos div{
     text-align: center;
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1600px) {
+    .contenedor_generos{
+        width: 100%;
+        column-gap: 2.5rem;
+    row-gap: 1rem;
+    padding: 2rem;
+    }
+    
 }

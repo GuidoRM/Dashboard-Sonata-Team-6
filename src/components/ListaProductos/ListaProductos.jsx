@@ -4,7 +4,7 @@ import "../ListaUsuarios/styles_listaUsuarios.css"
 import { useState, useEffect, useRef } from 'react';
 import ElementoListaAlbumes from "./ElementInListAlbumes";
 
-function ListaUsuarios() {
+function ListaProductos() {
     const [keyword, setKeyword] = useState("0");
     const [albumFilter, setAlbumFilter] = useState([]);
     const inputTexto = useRef();
@@ -30,20 +30,26 @@ function ListaUsuarios() {
 
     const filtrador = (e) => {
         e.preventDefault();
+        console.log(albumFilter.id)
         setKeyword(inputTexto.current.value)
+        if(!inputTexto.current.value){
+            setKeyword("0")
+        }
     }
 
     return (
         <>
             <section className="ListaUsuario_contenedor">
                 <form className="ListaUsuario_buscador" onSubmit={(e) => filtrador(e)} method="GET">
-                    <h1>Listado de Álbumes </h1>
+                    <h1> <i className="fa-solid fa-compact-disc"></i> Productos del sistema</h1>
                     <div className="ListaUsuario_contenedorBuscador">
                         <input onChange={(e) => filtrador(e)} placeholder="Buscar por #id" className="ListaUsuario_campoBuscar" ref={inputTexto} type="text" />
                         <button className="ListaUsuario_botonBuscar"><i className="fa-solid fa-magnifying-glass"></i></button>
                     </div>
-                    <p>{albumFilter.id}</p>
                 </form>
+
+                {!albumFilter.id && keyword!="0" ?<span className="ListaUsuario_respuesta">{"No se han encontrado resultados del usuario con ID "+keyword}</span>: ""}
+    
                 <table className="tablaElementoUsuario">
                     <thead>
                         <tr>
@@ -90,4 +96,4 @@ function ListaUsuarios() {
         </>
     );
 }
-export default ListaUsuarios;
+export default ListaProductos;

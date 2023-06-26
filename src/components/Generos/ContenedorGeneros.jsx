@@ -10,28 +10,24 @@ function ContenedorGeneros() {
 
     useEffect(() => {
         fetch('http://localhost:3030/api/products')
-        .then((response) => {
-            return response.json()
-        })
-        .then((albums) => {
-            setAlbums(albums)
-            console.log(JSON.parse(albums.countByGenre))
-        })
+            .then((response) => {
+                return response.json()
+            })
+            .then((albumss) => {
+                setAlbums(albumss.countByGenre)
+                console.log(albumss.countByGenre)
+            })
     }, [])
     return (
         <>
             <section className="contenedor_generos">
                 <h1>Generos</h1>
-                <Generos categoria={"Rock"}  />
-                <Generos categoria={"Pop"} />
-                <Generos categoria={"Clasica"} />
-                <Generos categoria={"Electronica"} />
-                <Generos categoria={"Rap"} />
-                <Generos categoria={"Reggaeton"} />
-                <Generos categoria={"Trap"} />
-                <Generos categoria={"Cumbia"} />
-                <Generos categoria={"Punk"} />
-                <Generos categoria={"Tango"} />
+                {albums.map(album => {
+                    return (<Generos key={album.name} categoria={album.name} cantidad={album.count}/>)
+                })
+                }
+
+
             </section>
         </>
     );

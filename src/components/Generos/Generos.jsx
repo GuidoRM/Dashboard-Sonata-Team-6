@@ -9,7 +9,7 @@ function Generos({ categoria, cantidad }) {
                 <div className="informacion">
                     <h2>{categoria}</h2>
                     <div>
-                        <span>{cantidad}</span>
+                        <span className="cantidad_generos">{cantidad}</span>
                     </div>
                 </div>
 
@@ -19,10 +19,12 @@ function Generos({ categoria, cantidad }) {
 }
 
 Generos.propTypes = {
+    categoria: PropTypes.string,
     cantidad: PropTypes.number,
 };
 
 Generos.defaultProps = {
+    categoria: "Genero",
     cantidad: 0,
 }
 

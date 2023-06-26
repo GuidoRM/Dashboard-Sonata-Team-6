@@ -14,6 +14,7 @@ import ContenedorTarjetaTotal from "../TarjetasTotal/ContenedorTarjetaTotal";
 import ContenedorTarjetaUltimoElemento from '../TarjetaUltimoElemento/ContenedorTarjetaUltimoElemento';
 import ListaUsuarios from '../ListaUsuarios/ListaUsuarios';
 import ContenedorGeneros from '../Generos/ContenedorGeneros';
+import ListaProductos from '../ListaProductos/ListaProductos';
 
 function SideBar() {
     return (
@@ -43,7 +44,7 @@ function SideBar() {
                     <Route path="/totales" element={<ContenedorTarjetaTotal />} />
                     <Route path="/ultimasAdiciones" element={<ContenedorTarjetaUltimoElemento/>} />
                     <Route path="/generos" element={<ContenedorGeneros />} />
-                    <Route path="/productos" element={<Principal />} />
+                    <Route path="/productos" element={<ListaProductos />} />
                     <Route path="/usuarios" element={<ListaUsuarios />} />
                     <Route element={<NotFound />} />
                 </Routes>
